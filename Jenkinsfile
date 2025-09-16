@@ -3,7 +3,7 @@ pipeline{
     environment{
         PROJECT='Lasya-InfoTech'
         component='backend'
-        appVersion=''
+       def appVersion=''
     }
     stages{
         stage('Read Version'){
