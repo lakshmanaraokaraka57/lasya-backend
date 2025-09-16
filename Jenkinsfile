@@ -28,8 +28,8 @@ pipeline{
             steps{
                 script{
                     sh """
-                    // docker build -t backend:v1.0.0 .
-                    podman build -t backend:v1.0.0 .
+                     docker build -t backend:v1.0.0 .
+                   # podman build -t backend:v1.0.0 .
                     """
                 }
             }
