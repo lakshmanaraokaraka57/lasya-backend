@@ -24,19 +24,28 @@ pipeline{
                 }
             }
         }
+        stage('Docker Build'){
+            steps{
+                script{
+                    sh """
+                    npm install
+                    """
+                }
+            }
+        }
     }
     post{
         success{
             script{
                 def timestamp= new Date()
-                echo 'Deployment completed at ${timestamp}'
+                echo "Deployment completed at ${timestamp}"
             }
             deleteDir()
         }
         failure{
             script{
                 def timestamp = new Date()
-                echo  'Deployment is not completed at ${timestamp}'
+                echo  "Deployment is not completed at ${timestamp}"
             }
         }
     }
