@@ -1,9 +1,9 @@
 pipeline{
     agent any
     environment{
-        PROJECT='Lasya-InfoTech'
+        PROJECT='expense'
         component='backend'
-       def appVersion=''
+        appVersion=''
     }
     stages{
         stage('Read Version'){
@@ -28,7 +28,7 @@ pipeline{
             steps{
                 script{
                     sh """
-                    npm install
+                    docker build -t backend:v1.0.0 .
                     """
                 }
             }
