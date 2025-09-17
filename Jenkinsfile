@@ -9,7 +9,7 @@ pipeline{
         stage('Read Version'){
             steps{
                 script{
-                    ansiColor('xterm')
+                    
                     def packageJson = readJSON file: 'package.json'
                     appVersion=packageJson.version
                     echo "appversion is:$appVersion"
