@@ -5,6 +5,9 @@ pipeline{
         component='backend'
         appVersion=''
     }
+    options{
+        ansiColor('xterm')
+    }
     stages{
         stage('Read Version'){
             steps{
