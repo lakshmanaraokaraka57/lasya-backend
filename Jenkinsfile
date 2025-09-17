@@ -28,7 +28,7 @@ pipeline{
             steps{
                 script{
                     sh """
-                     sudo docker build -t backend:v1.0.0 .
+                      docker build -t backend:v1.0.0 .
                    
                     """
                 }
