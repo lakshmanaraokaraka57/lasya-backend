@@ -19,7 +19,7 @@ pipeline{
             steps{
                 script{
                     sh """
-                    apt install  npm
+                     npm install
                     """
                 }
             }
