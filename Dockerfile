@@ -4,14 +4,13 @@ COPY package.json ./
 COPY *.js ./
 RUN npm install
 
+
 FROM node:18.20.8-alpine3.21
 RUN addgroup -S expense && adduser -S expense -G expense && \
-   mkdir /opt/backend && \
-   chown -R expense:expense /opt/backend
+    mkdir /opt/backend && \
+    chown -R expense:expense /opt/backend
 ENV DB_HOST="mysql"
 WORKDIR /opt/backend
 USER expense
-COPY --from=builder /opt/backend   /opt/backend
+COPY --from=builder /opt/backend /opt/backend
 CMD ["node", "index.js"]
-
-
